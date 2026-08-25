@@ -25,5 +25,11 @@ test.describe('Login', () => {
       
       await expect(loginPage.errorMessage).toHaveText('Your email or password is incorrect!');
     });
+
+    test('User cannot login with empty fields', async () => {
+    await loginPage.login('', '');
+
+    await expect(loginPage.emailInput).toBeFocused();
+});
 });
 
