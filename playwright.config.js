@@ -4,8 +4,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default defineConfig({
+
     testDir: './tests',
-    
+
     timeout: 30 * 1000,
 
     fullyParallel: true,
@@ -19,6 +20,7 @@ export default defineConfig({
     reporter: 'html',
 
     use: {
+        baseURL: process.env.BASE_URL,
         trace: 'on-first-retry',
     },
 
